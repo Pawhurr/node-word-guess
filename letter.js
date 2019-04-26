@@ -22,6 +22,6 @@ function Letter(char) {
 // var letter = new Letter("A");
 
 // letter.guessCheck(userInput);
-// letter.charView();
+// letter.toString();
 
 module.exports = Letter;
