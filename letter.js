@@ -1,8 +1,8 @@
 // var userInput = process.argv[2];
 
-function Letter(char, beenGuessed) {
+function Letter(char) {
     this.char = char;
-    this.beenGuessed = beenGuessed;
+    this.beenGuessed = false;
     this.toString = function() {
         if (this.beenGuessed === true) {
             // console.log(this.char);
@@ -19,7 +19,7 @@ function Letter(char, beenGuessed) {
     }
 };
 
-// var letter = new Letter("A", false);
+// var letter = new Letter("A");
 
 // letter.guessCheck(userInput);
 // letter.charView();
