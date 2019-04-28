@@ -20,12 +20,3 @@ function Word() {
 };
 
 module.exports = Word;
-
-// var word = new Word();
-
-// word.addLetter("c");
-// word.addLetter("a");
-// word.addLetter("t");
-// console.log(word.wordBuild);
-// word.userChoice("a");
-// word.wordView();

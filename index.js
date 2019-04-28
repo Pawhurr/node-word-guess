@@ -1,7 +1,7 @@
 var Word = require("./word");
 var inquirer = require("inquirer");
 var guesses = 7;
-var wordChoices = ["BART", "HOMER", "MAGGIE"];
+var wordChoices = ["BART SIMPSON", "HOMER SIMPSON", "MAGGIE SIMPSON"];
 var word = new Word();
 var correct = 0;
 var falseCount = 0;
@@ -15,6 +15,9 @@ function createWord() {
 
     for (var i = 0; i < computerChoice.length; i++) {
         word.addLetter(computerChoice[i]);
+        if (computerChoice[i] === " ") {
+            word.wordBuild[i].beenGuessed = true;
+        }
     };
     
 };
@@ -33,7 +36,7 @@ function start() {
             createWord();
             play();
         } else {
-            console.log("Well, goodbye then. Maybe next time.")
+            console.log("\nWell, goodbye then. Maybe next time.")
         }
     })
 };
@@ -52,7 +55,10 @@ function play() {
             {
                 name: "userInput",
                 type: "input",
-                message: "What letter would you like to guess?"
+                message: "What letter would you like to guess?",
+                validate: function(name){
+                    return name !== '';
+                }
             }
         ]).then(function(answer) {
             word.userChoice(answer.userInput.toUpperCase());
@@ -90,16 +96,3 @@ function play() {
         start();
     }
 }
-
-// function play() {
-    //if guess > 0 {
-        //CL(guesses)
-        //word.wordView()
-        //prompt pick letter
-            //user inputs
-            //word.userChoice(userInput)
-                //if correct CL(correct) and play()
-                //if incorrect CL(incorrect), guesses--, play()
-                //else game over
-    //}
-// }
