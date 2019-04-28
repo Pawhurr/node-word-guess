@@ -1,7 +1,7 @@
 var Word = require("./word");
 var inquirer = require("inquirer");
 var guesses = 7;
-var wordChoices = ["BART SIMPSON", "HOMER SIMPSON", "MAGGIE SIMPSON"];
+var wordChoices = ["BART SIMPSON", "HOMER", "MAGGIE", "MARGE", "MISTER BURNS", "SMITHERS", "MOE", "BARNEY", "LISA", "PRINCIPAL SKINNER", "NED FLANDERS", "SPRINGFIELD", "SUPERINTENDENT CHALMERS", "MILLHOUSE", "ITCHY", "SCRATCHY", "KRUSTY", "MAYOR QUIMBY", "TROY MCCLURE", "SANTAS LITTLE HELPER"];
 var word = new Word();
 var correct = 0;
 var falseCount = 0;
@@ -41,7 +41,6 @@ function start() {
     })
 };
 
-start();
 
 function play() {
     if (guesses > 0) {
@@ -82,7 +81,7 @@ function play() {
                 start();
                 return;
             }
-           
+            
             play();
             
         })
@@ -95,4 +94,11 @@ function play() {
         console.log("\nGame Over. Too bad. You can't go out like that. So, I have a question for you...\n");
         start();
     }
-}
+};
+
+console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+console.log("\nWELCOME TO THE SIMPSONS WORD GUESS GAME!\n");
+console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+
+start();
